@@ -2622,8 +2622,7 @@
                 {
                     if (_is_node.isNodeJS && typeof require === 'function') {
                         PDFWorkerUtil.isWorkerDisabled = true;
-                        PDFWorkerUtil.fallbackWorkerSrc =
-                            '../pdf/build/pdf.worker.js';
+                        PDFWorkerUtil.fallbackWorkerSrc = './pdf.worker.js';
                     } else if (typeof document === 'object') {
                         const pdfjsFilePath = document?.currentScript?.src;
 

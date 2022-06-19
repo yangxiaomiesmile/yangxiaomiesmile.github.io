@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+  <head>
+    <meta name="referrer" content="always" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <script>
+      document.title = '最美的爱情';
+    </script>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      * {
+        margin: 0;
+      }
+      #app {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+      #app p {
+        font-size: 0.8rem;
+        color: steelblue;
+        font-weight: 700;
+      }
+      #content {
+        width: 100%;
+        text-align: center;
+        position: relative;
+        padding-top: 1rem;
+      }
+      #app span {
+        color: lightcoral;
+        opacity: 0.9;
+        margin: 0 0.1rem;
+        display: inline-flex;
+        min-width: 0.8rem;
+        justify-content: center;
+      }
+      #app p.last {
+        color: steelblue;
+        font-size: 0.2rem;
+        position: fixed;
+        bottom: 2px;
+        text-align: center;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app">
+      <img src="./images/tu.jpg" />
+      <!-- <img src="https://static.yximgs.com/udata/pkg/yy/xibg.jpg" /> -->
+      <div id="content">
+        <p style="margin-bottom: 0.2rem">张之源与李容禾相恋已经</p>
+        <p>
+          <span id="_d"></span>天<span id="_h"></span>小时<span id="_m"></span
+          >分钟<span id="_s"></span>秒
+        </p>
+      </div>
+    </div>
+    <script>
+      function c() {
+        var now = Date.now();
+        var firstDay = new Date('2022/02/04 00:00:00').getTime();
+        var leftTime = now - firstDay;
+        var d = Math.floor(leftTime / 1000 / 60 / 60 / 24);
+        var h = Math.floor((leftTime / 1000 / 60 / 60) % 24);
+        var m = Math.floor((leftTime / 1000 / 60) % 60);
+        var s = Math.floor((leftTime / 1000) % 60);
+        document.getElementById('_d').innerHTML = d;
+        document.getElementById('_h').innerHTML = h < 10 ? '0' + h : h;
+        document.getElementById('_m').innerHTML = m < 10 ? '0' + m : m;
+        document.getElementById('_s').innerHTML = s < 10 ? '0' + s : s;
+      }
+      c();
+      setInterval(function () {
+        c();
+      }, 1000);
+    </script>
+  </body>
+</html>
